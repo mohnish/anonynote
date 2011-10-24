@@ -1,0 +1,13 @@
+.bundle
+db/*.sqlite3
+log/*.log
+tmp/
+.sass-cache/
+/.bundle
+/vendor/bundle
+/log/*
+/public/system/*
+/coverage/
+/spec/tmp/*
+**.orig
+config/*.yml
