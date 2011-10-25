@@ -1,0 +1,9 @@
+<div id="container">
+  <% if @display_data %>
+    <h3><%= @display_data.title %></h3>
+    <p class="time"><%= @display_data.created_at %></p>
+    <div class="content"><%= @display_data.content %></div>
+  <% else %>
+    <div class="content"><%= "There is no data available" %></div>
+  <% end %>
+</div>
