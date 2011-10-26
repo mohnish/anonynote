@@ -16,6 +16,7 @@ class Content < ActiveRecord::Base
   
   # Create a record with the given input
   def self.create_record(info_hash)
+    info_hash[:url] = Content.url_id
     data = Content.new(info_hash)
     
     # Check if the data was successfully inserted into the database
@@ -25,6 +26,20 @@ class Content < ActiveRecord::Base
       # This is our fallback. Should be more useful. For now, this is fine.
       return nil
     end 
+  end
+  
+  # This method creates a new random and unique url id
+  def self.url_id
+    # 97 is the ASCII value for 'a' (lower case)
+    url = (0...6).map{97.+(rand(25)).chr}.join
+    check_value = Content.find_by_url(url)
+    
+    while check_value != nil do
+      url = (0...6).map{97.+(rand(25)).chr}.join
+      check_value = Content.find_by_url(url)
+    end
+    
+    return url
   end
   
 end

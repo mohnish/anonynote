@@ -4,7 +4,7 @@ class NewController < ApplicationController
   end
   
   def create
-    info_hash = {:title => params[:title], :content => params[:content], :url => url_id}
+    info_hash = {:title => params[:title], :content => params[:content]}
     data = Content.create_record(info_hash)
     
     if data.nil?
@@ -23,21 +23,6 @@ class NewController < ApplicationController
     else
       render('display')
     end
-  end
-  
-  private
-  # This method creates a new random and unique url id
-  def url_id
-    # 97 is the ASCII value for 'a' (lower case)
-    url = (0...6).map{97.+(rand(25)).chr}.join
-    check_value = Content.find_by_url(url)
-    
-    while check_value != nil do
-      url = (0...6).map{97.+(rand(25)).chr}.join
-      check_value = Content.find_by_url(url)
-    end
-    
-    return url
   end
 
 end
