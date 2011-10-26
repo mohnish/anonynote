@@ -14,4 +14,17 @@ class Content < ActiveRecord::Base
     return display_data
   end
   
+  # Create a record with the given input
+  def self.create_record(info_hash)
+    data = Content.new(info_hash)
+    
+    # Check if the data was successfully inserted into the database
+    if data.save
+      return data      
+    else
+      # This is our fallback. Should be more useful. For now, this is fine.
+      return nil
+    end 
+  end
+  
 end

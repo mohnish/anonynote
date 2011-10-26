@@ -3,17 +3,16 @@ class NewController < ApplicationController
     render('index')
   end
   
-  def create    
-    data = Content.new(:title => params[:title], :content => params[:content], :url => url_id)
+  def create
+    info_hash = {:title => params[:title], :content => params[:content], :url => url_id}
+    data = Content.create_record(info_hash)
     
-    # Check if the data was successfully inserted into the database
-    if data.save
+    if data.nil?
+      render('fail')
+    else
       final_url = 'http://' + request.host_with_port + '/' + data.url
       redirect_to(final_url)
-    else
-      # This is our fallback. Should be more useful. For now, this is fine.
-      render('fail')
-    end  
+    end
   end
   
   def show
