@@ -28,6 +28,7 @@ class Content < ActiveRecord::Base
     end 
   end
   
+  private
   # This method creates a new random and unique url id
   def self.url_id
     # 97 is the ASCII value for 'a' (lower case)
