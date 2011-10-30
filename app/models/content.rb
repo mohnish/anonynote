@@ -20,8 +20,14 @@ class Content < ActiveRecord::Base
     if !Content.check(params)
       return nil
     end    
-    params[:url] = Content.url_id    
-    data = Content.new(params)    
+    
+    # This is to avoid the 'submit' post value from creeping into the DB insertion
+    info = {}
+    info[:title] = params[:title]
+    info[:content] = params[:content]
+    info[:url] = Content.url_id  
+    
+    data = Content.new(info)    
     # Check if the data was successfully inserted into the database
     if data.save
       return data      
