@@ -4,17 +4,11 @@ class NewController < ApplicationController
   end
   
   def create
-    # Basic error checking
-    if params[:title].nil? || params[:content].nil? || params[:title] == '' || params[:content] == ''
-      flash[:message] = 'Please fill the required fields before continuing'
-      render('index')
-    end
-    
-    info_hash = {:title => params[:title], :content => params[:content]}
-    data = Content.create_record(info_hash)
+    data = Content.create_record(params)
     
     if data.nil?
-      render('fail')
+      flash[:message] = 'Sorry, please fill the title and the content areas and proceed'
+      render('index')
     else
       final_url = 'http://' + request.host_with_port + '/' + data.url
       redirect_to(final_url)

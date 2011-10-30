@@ -15,10 +15,13 @@ class Content < ActiveRecord::Base
   end
   
   # Create a record with the given input
-  def self.create_record(info_hash)
-    info_hash[:url] = Content.url_id
-    data = Content.new(info_hash)
-    
+  def self.create_record(params)
+    # Sanitation    
+    if !Content.check(params)
+      return nil
+    end    
+    params[:url] = Content.url_id    
+    data = Content.new(params)    
     # Check if the data was successfully inserted into the database
     if data.save
       return data      
@@ -29,6 +32,19 @@ class Content < ActiveRecord::Base
   end
   
   private
+  # Value checking
+  def self.check(params)
+    if params.has_key?(:title) && params.has_key?(:content)
+      if !params[:title].nil? && !params[:content].nil?
+        if !params[:title].empty? || !params[:content].empty?
+          return TRUE
+        end
+      end
+    end
+    
+    return FALSE
+  end 
+  
   # This method creates a new random and unique url id
   def self.url_id
     # 97 is the ASCII value for 'a' (lower case)
