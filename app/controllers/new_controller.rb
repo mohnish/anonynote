@@ -4,6 +4,13 @@ class NewController < ApplicationController
   end
   
   def create
+    
+    # Basic error checking
+    if params[:title].nil? || params[:content].nil?
+      flash[:message] = 'Please fill the required fields before continuing'
+      render('index')
+    end
+    
     info_hash = {:title => params[:title], :content => params[:content]}
     data = Content.create_record(info_hash)
     
