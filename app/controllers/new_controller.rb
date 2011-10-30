@@ -5,7 +5,7 @@ class NewController < ApplicationController
   
   def create
     # Basic error checking
-    if params[:title].nil? || params[:content].nil?
+    if params[:title].nil? || params[:content].nil? || params[:title] == '' || params[:content] == ''
       flash[:message] = 'Please fill the required fields before continuing'
       render('index')
     end
