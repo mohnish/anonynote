@@ -8,7 +8,7 @@ class NewController < ApplicationController
     
     if data.nil?
       flash[:message] = 'Sorry, please fill the title and the content areas and proceed'
-      render('index')
+      redirect_to(:controller => 'new', :action => 'index')
     else
       final_url = 'http://' + request.host_with_port + '/' + data.url
       redirect_to(final_url)

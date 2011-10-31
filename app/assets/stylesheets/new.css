@@ -1,15 +1,57 @@
-input[type=text], textarea {
-    border: 1px solid #f0f0f0;
+body {
+    font-family: "lucida grande", tahoma, verdana, arial, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    color: #333;
+}
+
+#container {
+    margin: 0 auto;
+    width: 800px;
+    padding: 5px;
+}
+
+input {
+    display: block;
+}
+
+#title, textarea {
+    border: 1px solid #f0f0f0; 
+    margin: 0 auto;
+    width: 760px;
+}
+
+textarea {
+    position: relative;
+    padding: 3px;
+    height: 400px;
+}
+
+#title {
+    padding: 3px;
+    font-size: 20px;
+    height: 30px;
+    -webkit-border-radius: .5em; 
+    -moz-border-radius: .5em;
+    border-radius: .5em;
+}
+
+p.center {
+    width: 760px;
+    margin: 0 auto;   
 }
 
 .button {
+    width: 100px;
+    height: 40px;
+    font-size: 18px;
     display: inline-block;
     outline: none;
     cursor: pointer;
     text-align: center;
     text-decoration: none;
-    font: 14px/100% Arial, Helvetica, sans-serif;
-    padding: .5em 2em .55em;
+    padding: 3px;
+    vertical-align: middle;
     text-shadow: 0 1px 1px rgba(0,0,0,.3);
     -webkit-border-radius: .5em; 
     -moz-border-radius: .5em;
@@ -17,6 +59,11 @@ input[type=text], textarea {
     -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
     -moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
     box-shadow: 0 1px 2px rgba(0,0,0,.2);
+}
+
+.right {
+    position: relative;
+    left: 680px;
 }
 
 .button:hover {
@@ -29,7 +76,8 @@ input[type=text], textarea {
 }
 
 .orange {
-    color: #fef4e9;
+    font-weight: bold;
+    color: #fff;
     border: solid 1px #da7c0c;
     background: #f78d1d;
     background: -webkit-gradient(linear, left top, left bottom, from(#faa51a), to(#f47a20));
@@ -43,30 +91,15 @@ input[type=text], textarea {
     filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#f88e11', endColorstr='#f06015');
 }
 .orange:active {
-    color: #fcd3a5;
+    color: #fff;
     background: -webkit-gradient(linear, left top, left bottom, from(#f47a20), to(#faa51a));
     background: -moz-linear-gradient(top,  #f47a20,  #faa51a);
     filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#f47a20', endColorstr='#faa51a');
 }
 
-body {
-    font-family: "lucida grande", tahoma, verdana, arial, sans-serif;
-    font-size: 13px;
-    font-style: normal;
-    color: #333;
-}
-
-#container {
-    margin: 0 auto;
-    width: 760px;
-}
-
 .title {
-    color: blue;
-}
-
-.content {
-    /* Should be populated */
+    color: #f47c20;
+    text-align: center;
 }
 
 .time {

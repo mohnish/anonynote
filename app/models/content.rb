@@ -42,7 +42,7 @@ class Content < ActiveRecord::Base
   def self.check(params)
     if params.has_key?(:title) && params.has_key?(:content)
       if !params[:title].nil? && !params[:content].nil?
-        if !params[:title].empty? || !params[:content].empty?
+        if !params[:title].empty? && !params[:content].empty?
           return TRUE
         end
       end
