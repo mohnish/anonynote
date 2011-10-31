@@ -6,10 +6,12 @@
     <link href="/assets/pretty/prettify.css" rel="stylesheet" type="text/css"/>
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script src="/assets/tinymce/jscripts/tiny_mce/tiny_mce.js"></script>
+    <script src="http://scripts.embed.ly/jquery.embedly.js"></script>    
     <script src="/assets/pretty/prettify.js"></script>
     <script>
       $(document).ready(function() {
         prettyPrint();
+        $('a').embedly();
       });
       tinyMCE.init({
         mode : "textareas",
