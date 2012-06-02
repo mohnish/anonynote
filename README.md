@@ -1,3 +1,3 @@
-Cpypst.me:
+## cpypst me ##
 
 This is a basic project that allows users to copy-paste content on the internet and use it like an online notepad. This is a free tool and many new features will be added to this application (ability to embed images, videos, text formatting etc.).
