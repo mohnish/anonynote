@@ -1,4 +1,4 @@
-## cpypst me ##
+## cpypst me
 
 *cpypst me* is an anonymous online notepad to blog and share information. 
 
