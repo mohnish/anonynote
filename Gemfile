@@ -9,6 +9,7 @@ gem 'jbuilder', '~> 1.2'
 gem 'mysql2'
 gem 'turbolinks'
 gem 'haml'
+gem 'haml-rails'
 
 group :assets do
   gem 'sass-rails', '~> 4.0.0'
