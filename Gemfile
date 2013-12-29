@@ -6,10 +6,13 @@ gem 'rails', '4.0.2'
 gem 'andand'
 gem 'awesome_print'
 gem 'jbuilder', '~> 1.2'
-gem 'mysql2'
 gem 'turbolinks'
 gem 'haml'
 gem 'haml-rails'
+
+group :production do
+  gem 'pg'
+end
 
 group :assets do
   gem 'sass-rails', '~> 4.0.0'
@@ -21,6 +24,7 @@ group :doc do
 end
 
 group :development, :test do
+  gem 'mysql2'
   gem 'pry'
   gem 'guard'
   gem 'capybara'
