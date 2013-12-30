@@ -22,7 +22,7 @@ describe EntriesController do
 
   describe "GET edit" do
     it "assigns the requested entry as @entry" do
-      entry = Entry.create! valid_attributes
+      entry = FactoryGirl.create :entry
       get :edit, {:id => entry.to_param}
       assigns(:entry).should eq(entry)
     end
@@ -93,7 +93,7 @@ describe EntriesController do
       end
 
       it "re-renders the 'edit' template" do
-        entry = Entry.create! valid_attributes
+        entry = FactoryGirl.create :entry
         Entry.any_instance.stub(:save).and_return(false)
         put :update, {:id => entry.to_param, :entry => { "title" => "invalid value" }}
         response.should render_template("edit")
@@ -110,7 +110,7 @@ describe EntriesController do
     end
 
     it "redirects to the entries list" do
-      entry = Entry.create! valid_attributes
+      entry = FactoryGirl.create :entry
       delete :destroy, {:id => entry.to_param}
       response.should redirect_to(entries_url)
     end
