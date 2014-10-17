@@ -1,18 +1,13 @@
 class EntriesController < ApplicationController
 
-  # GET /entries/1
-  # GET /entries/1.json
   def show
     @entry = Entry.where(id: params[:id]).last
   end
 
-  # GET /entries/new
   def new
     @entry = Entry.new
   end
 
-  # POST /entries
-  # POST /entries.json
   def create
     @entry = Entry.new(entry_params)
 
@@ -28,7 +23,6 @@ class EntriesController < ApplicationController
   end
 
   private
-    # Never trust parameters from the scary internet, only allow the white list through.
     def entry_params
       params.require(:entry).permit(:title, :body)
     end
