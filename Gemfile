@@ -1,34 +1,28 @@
 source 'https://rubygems.org'
 
-ruby '2.1.1'
-gem 'rails', '4.1.1'
+ruby '2.1.3'
 
-gem 'andand'
+gem 'rails', '4.1.6'
 gem 'awesome_print'
-gem 'jbuilder', '~> 1.2'
-gem 'turbolinks'
-gem 'haml'
 gem 'haml-rails'
+gem 'jbuilder'
+gem 'mysql2'
+gem 'turbolinks'
 
 group :production do
   gem 'pg'
 end
 
 group :assets do
-  gem 'sass-rails', '~> 4.0.0'
-  gem 'uglifier', '>= 1.3.0'
-end
-
-group :doc do
-  gem 'sdoc', require: false
+  gem 'sass-rails'
+  gem 'uglifier'
 end
 
 group :development, :test do
-  gem 'mysql2'
-  gem 'pry'
-  gem 'guard'
   gem 'capybara'
-  gem 'guard-rspec'
-  gem 'rspec-rails'
   gem 'factory_girl_rails'
+  gem 'guard'
+  gem 'guard-rspec'
+  gem 'pry'
+  gem 'rspec-rails'
 end
