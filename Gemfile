@@ -1,28 +1,42 @@
 source 'https://rubygems.org'
+ruby '2.2.0'
 
-ruby '2.1.3'
-
-gem 'rails', '4.1.6'
+gem 'rails', '4.2.0'
 gem 'awesome_print'
-gem 'haml-rails'
+gem 'bcrypt'
 gem 'jbuilder'
 gem 'mysql2'
-gem 'turbolinks'
+gem 'uglifier'
+gem 'doorkeeper'
+gem 'haml-rails'
+gem 'jquery-rails'
+gem 'sass-rails'
+gem 'haml_assets'
+gem 'ejs'
+gem 'bootstrap-sass'
+
+gem 'sdoc', group: :doc
+
+group :test, :development do
+  gem 'jasmine'
+  gem 'guard-jasmine'
+  gem 'factory_girl_rails'
+  gem 'spring'
+  gem 'spring-commands-rspec'
+  gem 'guard'
+  gem 'rspec-rails'
+  gem 'guard-rspec', require: false
+  gem 'byebug'
+  gem 'web-console'
+end
+
+group :osx do
+  gem 'rb-fsevent'
+  gem 'terminal-notifier'
+  gem 'terminal-notifier-guard'
+end
 
 group :production do
   gem 'pg'
-end
-
-group :assets do
-  gem 'sass-rails'
-  gem 'uglifier'
-end
-
-group :development, :test do
-  gem 'capybara'
-  gem 'factory_girl_rails'
-  gem 'guard'
-  gem 'guard-rspec'
-  gem 'pry'
-  gem 'rspec-rails'
+  gem 'rails_12factor'
 end
