@@ -6,6 +6,7 @@ A very minimalistic online notepad tool to quickly write & share information.
 
 - Ruby 2.2.0
 - Sinatra 1.4.5
+- AngularJS 1.3.4
 
 `<>` with `<3` by [MT](https://twitter.com/arrowgunz)
 
