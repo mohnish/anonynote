@@ -1,11 +1,11 @@
-# CopyPaste
+# AnonyNote
 
 A very minimalistic online notepad tool to quickly write & share information.
 
 ## Technology Stack
 
 - Ruby 2.2.0
-- Rails 4.2.0
+- Sinatra 1.4.5
 
 `<>` with `<3` by [MT](https://twitter.com/arrowgunz)
 
